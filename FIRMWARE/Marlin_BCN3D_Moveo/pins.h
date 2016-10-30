@@ -602,8 +602,8 @@
     #define X_STEP_PIN         2//set stepper motor 1 speed
     #define X_DIR_PIN          3//set stepper motor 1 direction
     #define X_ENABLE_PIN       38
-    #define X_MIN_PIN           3
-    #define X_MAX_PIN           2
+    #define X_MIN_PIN           30
+    #define X_MAX_PIN           20
 
     #define Y_STEP_PIN         4//set stepper motor 2 speed
     #define Y_DIR_PIN          5//set stepper motor 2 direction

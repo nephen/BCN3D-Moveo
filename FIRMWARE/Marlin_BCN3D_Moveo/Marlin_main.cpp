@@ -669,7 +669,7 @@ void loop()
   //check heater every n milliseconds
   manage_heater();
   manage_inactivity();
-  //checkHitEndstops();
+  checkHitEndstops();
   lcd_update();
 }
 
