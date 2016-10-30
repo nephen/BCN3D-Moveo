@@ -595,6 +595,8 @@
 
 /****************************************************************************************
 * Arduino Mega pin assignment for RobotAnno
+* motor 1     |     motor2     |     motor3     |     motor4     |     motor5     |     motor6
+* 8/9            |     11/12        |     20/21       |     3/4           |     5/6             |     13/14
 * Modified by nephen
 ****************************************************************************************/
     #define X_STEP_PIN         8//set stepper motor 1 speed
@@ -733,8 +735,14 @@
 
   #define TEMP_BED_PIN       14   // ANALOG NUMBERING
 
+/****************************************************************************************
+* Arduino Mega pin assignment for RobotAnno
+* NUM_SERVOS : 1
+* SERVO0_PIN : 0
+* Modified by nephen
+****************************************************************************************/
   #ifdef NUM_SERVOS
-    #define SERVO0_PIN         11
+    #define SERVO0_PIN         0
 
     #if NUM_SERVOS > 1
       #define SERVO1_PIN         6
