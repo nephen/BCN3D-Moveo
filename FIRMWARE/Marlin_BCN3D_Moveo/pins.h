@@ -596,37 +596,37 @@
 /****************************************************************************************
 * Arduino Mega pin assignment for RobotAnno
 * motor 1     |     motor2     |     motor3     |     motor4     |     motor5     |     motor6
-* 8/9            |     11/12        |     20/21       |     3/4           |     5/6             |     13/14
+* 2/3            |     4/5             |     6/7          |     8/9            |     10/11       |     12/13
 * Modified by nephen
 ****************************************************************************************/
-    #define X_STEP_PIN         8//set stepper motor 1 speed
-    #define X_DIR_PIN          9//set stepper motor 1 direction
+    #define X_STEP_PIN         2//set stepper motor 1 speed
+    #define X_DIR_PIN          3//set stepper motor 1 direction
     #define X_ENABLE_PIN       38
     #define X_MIN_PIN           3
     #define X_MAX_PIN           2
 
-    #define Y_STEP_PIN         11//set stepper motor 2 speed
-    #define Y_DIR_PIN          12//set stepper motor 2 direction
+    #define Y_STEP_PIN         4//set stepper motor 2 speed
+    #define Y_DIR_PIN          5//set stepper motor 2 direction
     #define Y_ENABLE_PIN       56
     #define Y_MIN_PIN          14
     #define Y_MAX_PIN          15
 
-    #define Z_STEP_PIN         20//set stepper motor 3 speed
-    #define Z_DIR_PIN          21//set stepper motor 3 direction
+    #define Z_STEP_PIN         6//set stepper motor 3 speed
+    #define Z_DIR_PIN          7//set stepper motor 3 direction
     #define Z_ENABLE_PIN       62
     #define Z_MIN_PIN          18
     #define Z_MAX_PIN          19
 
-    #define Y2_STEP_PIN        3//set stepper motor 4 speed
-    #define Y2_DIR_PIN         4//set stepper motor 4 direction
+    #define Y2_STEP_PIN        8//set stepper motor 4 speed
+    #define Y2_DIR_PIN         9//set stepper motor 4 direction
     #define Y2_ENABLE_PIN      30
 
-    #define Z2_STEP_PIN        5//set stepper motor 5 speed
-    #define Z2_DIR_PIN         6//set stepper motor 5 direction
+    #define Z2_STEP_PIN        10//set stepper motor 5 speed
+    #define Z2_DIR_PIN         11//set stepper motor 5 direction
     #define Z2_ENABLE_PIN      30
 
-    #define E0_STEP_PIN        13//set stepper motor 6 speed
-    #define E0_DIR_PIN         14//set stepper motor 6 direction
+    #define E0_STEP_PIN        12//set stepper motor 6 speed
+    #define E0_DIR_PIN         13//set stepper motor 6 direction
     #define E0_ENABLE_PIN      24
 
     #define E1_STEP_PIN        36

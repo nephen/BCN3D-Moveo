@@ -238,8 +238,8 @@ float add_homing[3]={0,0,0};
 float endstop_adj[3]={0,0,0};
 #endif
 
-float min_pos[3] = { X_MIN_POS, Y_MIN_POS, Z_MIN_POS };
-float max_pos[3] = { X_MAX_POS, Y_MAX_POS, Z_MAX_POS };
+float min_pos[4] = { X_MIN_POS, Y_MIN_POS, Z_MIN_POS,  E_MIN_POS };
+float max_pos[4] = { X_MAX_POS, Y_MAX_POS, Z_MAX_POS, E_MAX_POS };
 bool axis_known_position[3] = {false, false, false};
 float zprobe_zoffset;
 
@@ -3975,11 +3975,13 @@ void get_arc_coordinates()
    }
 }
 
-void clamp_to_software_endstops(float target[3])
+void clamp_to_software_endstops(float target[4])
 {
   if (min_software_endstops) {
     if (target[X_AXIS] < min_pos[X_AXIS]) target[X_AXIS] = min_pos[X_AXIS];
     if (target[Y_AXIS] < min_pos[Y_AXIS]) target[Y_AXIS] = min_pos[Y_AXIS];
+    if (target[Z_AXIS] < min_pos[Z_AXIS]) target[Z_AXIS] = min_pos[Z_AXIS];
+    if (target[E_AXIS] < min_pos[E_AXIS]) target[E_AXIS] = min_pos[E_AXIS];
     
     float negative_z_offset = 0;
     #ifdef ENABLE_AUTO_BED_LEVELING
@@ -3987,13 +3989,18 @@ void clamp_to_software_endstops(float target[3])
       if (add_homing[Z_AXIS] < 0) negative_z_offset = negative_z_offset + add_homing[Z_AXIS];
     #endif
     
-    if (target[Z_AXIS] < min_pos[Z_AXIS]+negative_z_offset) target[Z_AXIS] = min_pos[Z_AXIS]+negative_z_offset;
+    #if 0
+    if (target[Z_AXIS] < min_pos[Z_AXIS]+negative_z_offset) 
+      target[Z_AXIS] = min_pos[Z_AXIS]+negative_z_offset;
+    #endif
   }
+    
 
   if (max_software_endstops) {
     if (target[X_AXIS] > max_pos[X_AXIS]) target[X_AXIS] = max_pos[X_AXIS];
     if (target[Y_AXIS] > max_pos[Y_AXIS]) target[Y_AXIS] = max_pos[Y_AXIS];
     if (target[Z_AXIS] > max_pos[Z_AXIS]) target[Z_AXIS] = max_pos[Z_AXIS];
+    if (target[E_AXIS] > max_pos[E_AXIS]) target[E_AXIS] = max_pos[E_AXIS];
   }
 }
 

@@ -198,7 +198,7 @@ bool IsStopped();
 void enquecommand(const char *cmd); //put an ASCII command at the end of the current buffer.
 void enquecommand_P(const char *cmd); //put an ASCII command at the end of the current buffer, read from flash
 void prepare_arc_move(char isclockwise);
-void clamp_to_software_endstops(float target[3]);
+void clamp_to_software_endstops(float target[4]);
 
 void refresh_cmd_timeout(void);
 
@@ -231,8 +231,8 @@ void recalc_delta_settings(float radius, float diagonal_rod);
 #ifdef SCARA
 extern float axis_scaling[3];  // Build size scaling
 #endif
-extern float min_pos[3];
-extern float max_pos[3];
+extern float min_pos[4];
+extern float max_pos[4];
 extern bool axis_known_position[3];
 extern float zprobe_zoffset;
 extern int fanSpeed;
