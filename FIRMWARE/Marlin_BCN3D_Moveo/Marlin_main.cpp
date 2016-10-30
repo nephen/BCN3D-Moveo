@@ -669,7 +669,7 @@ void loop()
   //check heater every n milliseconds
   manage_heater();
   manage_inactivity();
-  checkHitEndstops();
+  //checkHitEndstops();
   lcd_update();
 }
 
@@ -2720,6 +2720,7 @@ Sigma_Exit:
       {
         if(code_seen(axis_codes[i]))
         {
+          #if 0//nephen
           if(i == 3) { // E
             float value = code_value();
             if(value < 20.0) {
@@ -2733,6 +2734,8 @@ Sigma_Exit:
           else {
             axis_steps_per_unit[i] = code_value();
           }
+          #endif
+          axis_steps_per_unit[i] = code_value();
         }
       }
       break;
