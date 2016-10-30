@@ -592,7 +592,10 @@
     #define BEEPER             33
 
   #else
-
+/****************************************************************************************
+* Arduino Mega pin assignment for RobotAnno
+* Modified by nephen
+****************************************************************************************/
     #define X_STEP_PIN         54
     #define X_DIR_PIN          55
     #define X_ENABLE_PIN       38
