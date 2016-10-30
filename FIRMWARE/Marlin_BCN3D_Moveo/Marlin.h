@@ -71,6 +71,7 @@
 
 extern const char errormagic[] PROGMEM;
 extern const char echomagic[] PROGMEM;
+extern const char annomagic[] PROGMEM;
 
 #define SERIAL_ERROR_START (serialprintPGM(errormagic))
 #define SERIAL_ERROR(x) SERIAL_PROTOCOL(x)
@@ -83,6 +84,8 @@ extern const char echomagic[] PROGMEM;
 #define SERIAL_ECHOPGM(x) SERIAL_PROTOCOLPGM(x)
 #define SERIAL_ECHOLN(x) SERIAL_PROTOCOLLN(x)
 #define SERIAL_ECHOLNPGM(x) SERIAL_PROTOCOLLNPGM(x)
+
+#define SERIAL_ANNO_START (serialprintPGM(annomagic))
 
 #define SERIAL_ECHOPAIR(name,value) (serial_echopair_P(PSTR(name),(value)))
 

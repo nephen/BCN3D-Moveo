@@ -340,6 +340,7 @@ bool cancel_heatup = false ;
 
 const char errormagic[] PROGMEM = "Error:";
 const char echomagic[] PROGMEM = "echo:";
+const char annomagic[] PROGMEM = "anno:";
 
 //===========================================================================
 //=============================Private Variables=============================
@@ -620,6 +621,9 @@ void setup()
   digitalWrite(SERVO0_PIN, LOW); // turn it off
 #endif // Z_PROBE_SLED
   setup_homepin();
+
+  SERIAL_ANNO_START;
+  SERIAL_ECHOLNPGM("Init end");
 }
 
 void loop()
